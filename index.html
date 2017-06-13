@@ -4,13 +4,9 @@
     <title>Simple.io</title>
   </head>
   <body>
-    <script src="app.js"></script>
-    <script>
-      var socket = io('http://localhost');
-      socket.on('news', function (data) {
-      console.log(data);
-      socket.emit('my other event', { my: 'data' });
-      });
-    </script>
+    <canvas id="canvas" width="800" height="600" style="border:1px solid #000000;"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="scripts/update.js"></script>
+    <script src="scripts/input.js"></script>
   </body>
 </html>
