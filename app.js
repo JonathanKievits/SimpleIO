@@ -20,18 +20,19 @@ var Player = (id)=>{
     pressLeft:false,
     pressUp:false,
     pressDown:false,
-    maxSpd:10
+    maxSpd:10,
+    alive:true
   }
   self.updatePosition = ()=>
   {
     if (self.pressUp)
-      self.y -= self.maxSpd;
+        self.y -= self.maxSpd;
     if (self.pressLeft)
         self.x -= self.maxSpd;
     if (self.pressDown)
         self.y += self.maxSpd;
     if (self.pressRight)
-      self.x += self.maxSpd;
+        self.x += self.maxSpd;
   }
   return self;
 }
@@ -61,7 +62,8 @@ io.sockets.on('connection',(socket)=>
   })
 });
 
-setInterval(()=>{
+setInterval(()=>
+{
   var pack = [];
   for(var i in PLAYER_LIST){
     var player = PLAYER_LIST[i];
@@ -70,7 +72,8 @@ setInterval(()=>{
       {
         x:player.x,
         y:player.y,
-        number:player.number
+        number:player.number,
+        alive:player.alive
       });
     }
     for (var i in SOCKET_LIST)
