@@ -66,7 +66,7 @@ window.addEventListener("load", function ()
             preSec = sec+1;
         
         }
-
+        
 
         for (var i = 0; i < tiles.length; i++)
         {
