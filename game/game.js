@@ -23,6 +23,8 @@ window.addEventListener("load", function ()
         }
     }
     
+    console.log(typeof(tiles));
+    
     datem = new Date();
     sec = datem.getSeconds();
     
@@ -57,7 +59,7 @@ window.addEventListener("load", function ()
         {
             console.log("spawn" + sec);
             
-            var rand = Math.floor(Math.random()*tiles.length);
+            var rand = Math.floor(Math. random()*tiles.length);
             
             tiles[rand].fall(context);
             fallenTiles.push(tiles[rand]);
