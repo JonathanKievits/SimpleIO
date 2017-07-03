@@ -4,8 +4,6 @@ var Tile ={
     x:100,
     y:100,
     color: "#FFFFFF",
-    
-    
     draw: function(context)
     {
         context.beginPath();
@@ -15,10 +13,8 @@ var Tile ={
         context.stroke();
         context.closePath();
     },
-    
     fall: function(context)
     {
         this.color = "#FF0000";
-    },
+    }
 };
-

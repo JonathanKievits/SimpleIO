@@ -2,7 +2,7 @@ const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const button = document.getElementById("button");
 var name = "";
-var socket = io()
+var socket = io();
 
 button.addEventListener("click",()=>{
   name = document.getElementById("nameTxt").value;

@@ -20,7 +20,8 @@ var Player = (id)=>{
     pressUp:false,
     pressDown:false,
     maxSpd:5,
-    username:"Jeff"
+    username:"Jeff",
+    randomNumber: 0
   }
   self.updatePosition = ()=>
   {
@@ -53,6 +54,10 @@ io.sockets.on('connection',(socket)=>
     player.username = data.username;
   })
 
+  socket.on('setRnd',(data)=>{
+    player.randomNumber = data.rand;
+  })
+
   socket.on('keyPress',(data)=>{
     if(data.inputId === 'up')
       player.pressUp = data.state;
@@ -65,7 +70,8 @@ io.sockets.on('connection',(socket)=>
   })
 });
 
-setInterval(()=>{
+setInterval(()=>
+{
   var pack = [];
   for(var i in PLAYER_LIST){
     var player = PLAYER_LIST[i];
@@ -74,7 +80,8 @@ setInterval(()=>{
       {
         x:player.x,
         y:player.y,
-        username:player.username
+        username:player.username,
+        randomNumber:player.randomNumber
       });
     }
     for (var i in SOCKET_LIST)
